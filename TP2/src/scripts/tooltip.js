@@ -16,8 +16,7 @@ export function getContents (d) {
         followed by the number of lines
   */
   return `
-    <p style="font-family: 'Grenze Gotisch'; font-size: 24px; font-weight: normal;">Act ${d.Act}</p>
-    <p><b>Player: </b>${d.Player}</p>
-    <p><b>Lines: </b>${d.Count}</p>
+    <p style="font-family: 'Grenze Gotisch'; font-size: 24px; font-weight: normal;">${d.Player}</p>
+    <p>${d.Count} lines</p>
   `
 }

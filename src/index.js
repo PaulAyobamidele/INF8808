@@ -50,9 +50,9 @@ import d3Tip from 'd3-tip'
     helper.drawXAxis(xScale, graphSize.height)
     helper.drawYAxis(yScale)
 
-    legend.drawLegend(colorScale, g, graphSize.width)
-
     build(data, 0, currentYear, radiusScale, colorScale, xScale, yScale)
+
+    legend.drawLegend(colorScale, g, graphSize.width)
 
     viz.setCircleHoverHandler(tip)
 

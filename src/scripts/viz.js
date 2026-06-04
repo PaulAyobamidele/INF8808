@@ -26,9 +26,10 @@ export function positionLabels (g, width, height) {
  */
 export function drawCircles (data, rScale, colorScale) {
   d3.select('#graph-g')
-    .selectAll('circle')
+    .selectAll('circle.bubble')
     .data(data, d => d['Country Name'])
     .join('circle')
+    .attr('class', 'bubble')
     .attr('r', d => rScale(d.Population))
     .attr('fill', d => colorScale(d.Continent))
     .attr('fill-opacity', 0.7)
@@ -42,7 +43,7 @@ export function drawCircles (data, rScale, colorScale) {
  */
 export function setCircleHoverHandler (tip) {
   d3.select('#graph-g')
-    .selectAll('circle')
+    .selectAll('circle.bubble')
     .on('mouseover', function (event, d) {
       d3.select(this).attr('fill-opacity', 1)
       tip.show(d, this)
@@ -63,7 +64,7 @@ export function setCircleHoverHandler (tip) {
  */
 export function moveCircles (xScale, yScale, transitionDuration) {
   d3.select('#graph-g')
-    .selectAll('circle')
+    .selectAll('circle.bubble')
     .transition()
     .duration(transitionDuration)
     .attr('cx', d => xScale(d.GDP))
@@ -77,5 +78,5 @@ export function moveCircles (xScale, yScale, transitionDuration) {
  */
 export function setTitleText (year) {
   d3.select('.title')
-    .text('GDP vs. CO2 emissions in ' + year)
+    .text('Data for year: ' + year)
 }

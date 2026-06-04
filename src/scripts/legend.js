@@ -16,11 +16,12 @@ export function drawLegend (colorScale, g, width) {
     .scale(colorScale)
     .orient('vertical')
     .shape('circle')
-    .shapeRadius(6)
-    .shapePadding(5)
+    .shapeRadius(10)
+    .shapePadding(8)
+    .title('Legend')
 
   g.append('g')
     .attr('class', 'legend')
-    .attr('transform', 'translate(' + (width + 10) + ', 0)')
+    .attr('transform', 'translate(' + (width + 10) + ', -40)')
     .call(legend)
 }

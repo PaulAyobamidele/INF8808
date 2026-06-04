@@ -27,7 +27,7 @@ export function setRadiusScale (data) {
  */
 export function setColorScale (data) {
   const allData = Object.values(data).flat()
-  const continents = [...new Set(allData.map(d => d.Continent))]
+  const continents = [...new Set(allData.map(d => d.Continent))].sort()
   return d3.scaleOrdinal()
     .domain(continents)
     .range(d3.schemeSet1)

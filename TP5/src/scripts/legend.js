@@ -10,7 +10,7 @@ export function drawLegend (colorScale, g) {
   // TODO : Generate the legend
   // For help, see : https://d3-legend.susielu.com/
   const legendG = g.append('g')
-    .attr('transform', 'translate(50, 200)')
+    .attr('transform', 'translate(50, 150)')
 
   legendG.append('text')
     .text('Légende')
